@@ -7,8 +7,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { lightningChart } from "@lightningchart/lcjs";
 
-// https://lightningchart.com/js-charts/#license-key
-const lcjsLicenseKey = undefined;
+const lcjsLicenseKey = process.env.REACT_APP_LCJS_LICENSE;
 
 export const LCContext = createContext(null);
 
