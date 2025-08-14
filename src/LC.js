@@ -20,6 +20,10 @@ export function LCHost(props) {
       try {
         lcRef.current = lightningChart({
           license: lcjsLicenseKey,
+          licenseInformation: {
+            appTitle: "LightningChart JS Trial",
+            company: "LightningChart Ltd.",
+          },
           sharedContextOptions: {
             useIndividualCanvas: true,
           },
