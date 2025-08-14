@@ -1,9 +1,4 @@
-import {
-  Themes,
-  ChartXY,
-  PointLineAreaSeries,
-  emptyFill,
-} from "@lightningchart/lcjs";
+import { Themes, ChartXY, PointLineAreaSeries } from "@lightningchart/lcjs";
 import { useEffect, useState, useContext, useId } from "react";
 import { LCContext } from "../LC";
 
@@ -25,11 +20,12 @@ export function MyChartComponent(props: { data: number[] }) {
       theme: Themes.light,
       container,
     });
-    const lineSeries = chart
-      .addPointLineAreaSeries({
-        dataPattern: "ProgressiveX",
-      })
-      .setAreaFillStyle(emptyFill);
+    const lineSeries = chart.addLineSeries({
+      schema: {
+        y: { pattern: null },
+        x: { auto: true },
+      },
+    });
     setChartState({ chart, lineSeries });
     return () => {
       chart.dispose();
@@ -40,7 +36,7 @@ export function MyChartComponent(props: { data: number[] }) {
     if (!chartState || !data || chartState.chart.isDisposed()) {
       return;
     }
-    chartState.lineSeries.setSamples({ yValues: data });
+    chartState.lineSeries.setSamples({ y: data });
   }, [chartState, data]);
 
   return <div id={id} className="chart"></div>;
