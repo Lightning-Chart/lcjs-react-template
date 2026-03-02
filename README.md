@@ -1,26 +1,34 @@
-# LightningChart JS x React template
+# LightningChart JS × React Template
 
-This is a minimal example of using LightningChart JS in React.
+Minimal template for using [LightningChart JS](https://lightningchart.com/js-charts/) in React + TypeScript, built with [Vite](https://vite.dev/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
 
-Run app with:
+```sh
+npm install
+npm run dev
+```
 
-- `npm i`
-- `npm start`
+## License key
 
-Files of interest:
+Supply your LightningChart JS license key in [`.env`](./.env):
 
-- [Simple React line chart component](./src/Components/MyChartComponent.tsx)
-- [Using LCHost and the above line chart component](./src/App.tsx)
-- [LCHost + LCContext implementations](./src/LC.tsx)
+```
+VITE_LCJS_LICENSE="your-license-key-here"
+```
 
-License key should be supplied in [.env](./.env)
+## Files of interest
 
-Learn more about LightningChart JS and React [here](https://lightningchart.com/js-charts/docs/frameworks/react/).
+| File                                                                           | Description                                                                                  |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| [`src/LC.tsx`](./src/LC.tsx)                                                   | `LCHost` component and `LCContext` — manages a shared LC instance for all charts on the page |
+| [`src/Components/MyChartComponent.tsx`](./src/Components/MyChartComponent.tsx) | Example chart component using `LCContext`                                                    |
+| [`src/App.tsx`](./src/App.tsx)                                                 | Usage example with two charts                                                                |
 
-Learn more about connecting to real-time data sources [here](https://lightningchart.com/js-charts/docs/basic-topics/real-time-data/)
+## Learn more
+
+- [LightningChart JS + React docs](https://lightningchart.com/js-charts/docs/frameworks/react/)
 
 ## react-time-series-chart
 
-For a plug-and-play library for React time series chart component, see [react-time-series-chart](./react-time-series-chart/)
+For a plug-and-play React time series chart component, see [`react-time-series-chart`](./react-time-series-chart/).

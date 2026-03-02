@@ -4,7 +4,7 @@
 // However, with more charts visible at once, this gives an incredible performance advantage, since all charts use a shared LC context.
 // See usage example in ./Components/MyChartComponent.js and ./App.js
 
-import React, {
+import {
   createContext,
   useEffect,
   useRef,
@@ -23,7 +23,7 @@ export function LCHost(props: PropsWithChildren) {
     if (!lcRef.current) {
       try {
         lcRef.current = lightningChart({
-          license: process.env.REACT_APP_LCJS_LICENSE,
+          license: import.meta.env.VITE_LCJS_LICENSE,
           licenseInformation: {
             appTitle: "LightningChart JS Trial",
             company: "LightningChart Ltd.",
